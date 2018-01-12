@@ -35,12 +35,14 @@ class App < Sinatra::Base
   end
 
   get '/second_exercise' do
-    "Your second lesson will be to set your session :id key to a value.\nIn the route: /set_session, write a line of code that sets the session[:id] equal to 1.\nThen, navigate to the '/set_session' path"
+    "Your second lesson will be to set your session :id key to a value.\n
+    In the route: /set_session, write a line of code that sets the session[:id] equal to 1.\n
+    Then, navigate to the '/set_session' path"
   end
 
   get '/set_session' do
     #set session id here
-
+    session[:id] = 1
     if session[:id] == 1
       # "Session ID set. It's currently set to #{session[:id]}."
       redirect '/fetch_session_id'
